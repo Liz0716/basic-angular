@@ -1,0 +1,15 @@
+<mat-card *ngIf="usuarios">
+  <mat-card-header>
+    <mat-card-title>
+      {{ usuarios.nombre }} {{ usuarios.apellido_paterno }} {{ usuarios.apellido_materno }}
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <p><strong>Teléfono:</strong> {{ usuarios.telefono }}</p>
+    <p><strong>Calle y Número:</strong> {{ usuarios.calle_numero }}</p>
+    <p><strong>Fecha de Nacimiento:</strong> {{ usuarios.fecha_nacimiento | date:'longDate' }}</p>
+  </mat-card-content>
+</mat-card>
+
+<button  mat-raised-button color="accent" (click)="clickElemento(usuarios.id)">Editar</button>
+

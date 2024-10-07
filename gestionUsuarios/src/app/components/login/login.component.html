@@ -1,0 +1,25 @@
+<section>
+  <div class="login">
+      <form [formGroup]="Formulario" (ngSubmit)="Registrar()">
+        <mat-form-field appearance="outline">
+          <mat-label>Usuario</mat-label>
+          <input
+            matInput
+            formControlName="usuario"
+            type="text"
+            id="usuario"
+          />
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Contraseña</mat-label>
+          <input matInput [type]="hide ? 'password' : 'text'" id="password" formControlName="password">
+          <button mat-icon-button matSuffix (click)="hide = !hide"
+            [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>👀</mat-icon>
+          </button>
+        </mat-form-field>
+        <button type="submit">Entrar</button>
+      </form>
+    </div>
+</section>
+
